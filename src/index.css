@@ -1,0 +1,180 @@
+:root {
+  --primary-color: #ff5900;
+  --border-btn: 2px 4px 6px 2px;
+  --border-btn-color: black;
+  --border-list: 3px 6px 6px 3px;
+}
+
+.main-container {
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  max-width: 100vw;
+  height: 100vh;
+  background-color: #fff1ea;
+}
+section.home {
+  text-align: center;
+  margin-top: 40%;
+}
+.img-frigo {
+  width: 278px;
+  height: 278px;
+}
+.primary-link {
+  background-color: var(--primary-color);
+  border-width: var(--border-btn);
+  border-style: solid;
+  border-color: var(--border-btn-color);
+  padding: 16px 42px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+}
+.ingredient-link {
+  margin-left: 37%;
+  position: absolute;
+  top: 75%;
+}
+.primary-link:hover {
+  background-color: #dd4d00;
+}
+h1.title-home {
+  font-size: 42px;
+}
+p.home {
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+.ingredient-input {
+  width: 85%;
+  height: 43px;
+  border-radius: 15px;
+  margin-left: 5%;
+}
+.add h2 {
+  margin-left: 5%;
+}
+
+.ingredient-btn {
+  margin-left: 28%;
+  margin-top: 2rem;
+}
+.ingredient-list {
+  background-color: white;
+  width: 80%;
+  margin-left: 5%;
+  border-radius: 10px;
+  height: 37vh;
+  border-width: var(--border-list);
+  border-style: solid;
+  border-color: black;
+  list-style: none;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+.ingredient-list .ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cccccc60;
+}
+.ingredient-list .ingredient-item:hover {
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 5px;
+  font-style: italic;
+}
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.navbar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+.nav-item.active {
+  background: #ff5900;
+  border-radius: 30%;
+}
+.nav-item img {
+  color: white;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+.card-suggestion {
+  width: 45%;
+  height: 25vh;
+  background-color: white;
+  border-width: var(--border-btn);
+  border-style: solid;
+  border-color: var(--border-btn-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-suggestion img {
+  width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 0.6rem;
+}
+.card-suggestion h3 {
+  text-align: center;
+}
+.suggestion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+img.img-recette {
+  width: 195px;
+  height: 195px;
+  border-radius: 5px;
+}
+.banner {
+  display: flex;
+  justify-content: space-evenly;
+}
+.details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.etapes-preparation {
+  height: auto;
+  background: #2b1a0f2d;
+  border-radius: 40px 40px 0 0;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+p.list-ingr {
+  border-width: 2px 4px 6px 2px;
+  border-style: solid;
+  padding: 1rem;
+  background-color: white;
+}
+.etapes p {
+  height: 30vh;
+  border-width: 2px 4px 6px 2px;
+  border-style: solid;
+  padding: 1rem;
+  background-color: white;
+  line-height: 2rem;
+}
