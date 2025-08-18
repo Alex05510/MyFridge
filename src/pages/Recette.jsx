@@ -66,8 +66,8 @@ export default function Recette() {
                 favori ? "../pictos/add-favoris.svg" : "../pictos/favoris.svg"
               }
               alt={favori ? "Retirer des favoris" : "Ajouter aux favoris"}
-              width={30}
-              height={30}
+              width={20}
+              height={20}
               style={{ cursor: "pointer" }}
               onClick={handleFavoriClick}
             />

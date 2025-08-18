@@ -141,6 +141,7 @@ p.home {
   font-weight: 400;
 }
 .card-suggestion {
+  position: relative;
   width: 45%;
   height: 25vh;
   background-color: white;
@@ -209,6 +210,7 @@ p.list-ingr {
   font-weight: 400;
   border-width: 2px 4px 6px 2px;
   border-style: solid;
+  border-radius: 10px;
   padding: 1rem;
   background-color: white;
   line-height: 22px;
@@ -219,6 +221,7 @@ p.list-ingr {
   font-weight: 400;
   height: 30vh;
   border-width: 2px 4px 6px 2px;
+  border-radius: 10px;
   border-style: solid;
   padding: 1rem;
   background-color: white;
@@ -246,4 +249,16 @@ p.list-ingr {
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 12px;
+}
+.favoris-miniature {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background: none;
+}
+img.favoris-miniature {
+  width: 10%;
+  background: none;
 }

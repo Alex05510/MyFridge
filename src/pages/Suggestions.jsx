@@ -1,8 +1,10 @@
 import { NavLink } from "react-router";
 import { useListe } from "../context/ListeContext";
+import { useFavoris } from "../context/FavorisContext";
 
 export default function Suggestions() {
   const { recettes } = useListe();
+  const { favoris } = useFavoris();
 
   return (
     <div>
@@ -21,6 +23,13 @@ export default function Suggestions() {
               <NavLink to={`/recette/${recette.id}`}>
                 <img src={recette.image} alt={recette.nom} width={100} />
                 <h3>{recette.nom}</h3>
+                {favoris.includes(recette.id) && (
+                  <img
+                    src="/pictos/add-favoris.svg"
+                    alt="Favoris"
+                    className="favoris-miniature"
+                  />
+                )}
               </NavLink>
             </li>
           ))}
