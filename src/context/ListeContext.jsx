@@ -8,11 +8,15 @@ export function ListeProvider({ children }) {
   const [recettes, setRecettes] = useState([]);
 
   useEffect(() => {
+    // Charger les recettes et les ingrédients du frigo depuis le fichier JSON
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
+        // Filtrer les recettes en fonction des ingrédients du frigo
         const frigoIngredients = ingredients.map((i) => i.toLowerCase());
+        //filtre les recettes pour garder celle du frigo
         const filtered = data.filter((recette) =>
+          // Vérifie si tous les ingrédients de la recette sont dans le frigo
           recette.ingredients.every((ing) =>
             frigoIngredients.includes(ing.nom.toLowerCase())
           )

@@ -7,13 +7,17 @@ export default function Add() {
   const { ingredients, setIngredients } = useFridge();
 
   const handleAddIngredient = () => {
+    // ajouter un ingredient
     if (ingredient.trim() !== "") {
+      // crée une nouvelle liste d'ingredient et ajouter le nouveau
       setIngredients([...ingredients, ingredient]);
+      // vider la zone de texte une fois l'ingredient ajouté
       setIngredient("");
     }
   };
 
   const handleDeleteIngredient = (index) => {
+    // supprimé l'ingredient avec son index
     setIngredients(ingredients.filter((_, i) => i !== index));
   };
 
@@ -24,10 +28,12 @@ export default function Add() {
         className="ingredient-input"
         type="text"
         value={ingredient}
+        // mettre à jour l'état de l'ingredient
         onChange={(e) => setIngredient(e.target.value)}
       />
       <br />
       <button
+        // appel de la fonction pour ajouter un ingrédient
         onClick={handleAddIngredient}
         className="primary-link ingredient-btn"
       >
@@ -42,6 +48,7 @@ export default function Add() {
             {item}
             <button
               className="delete-btn"
+              // appel la fonction pour supprimer un ingrédient
               onClick={() => handleDeleteIngredient(index)}
               style={{ marginLeft: 8 }}
             >
@@ -51,36 +58,13 @@ export default function Add() {
         ))}
       </ul>
 
-      <NavLink to="/suggestions" className="primary-link ingredient-link">
+      <NavLink
+        to="/suggestions"
+        className="primary-link ingredient-link"
+        style={{ fontSize: "32px" }}
+      >
         GO
       </NavLink>
-      {/****************************barre de navigation******************************/}
-      <div className="navbar">
-        <NavLink
-          to="/add"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <img src="pictos/house.svg" className="icon" alt="Home" />
-        </NavLink>
-        <NavLink
-          to="/suggestions"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <img src="pictos/list.svg" className="icon" alt="Suggestion" />
-        </NavLink>
-        <NavLink
-          to="/favoris"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <img src="pictos/book.svg" className="icon" alt="Favoris" />
-        </NavLink>
-      </div>
     </section>
   );
 }

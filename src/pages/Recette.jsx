@@ -1,12 +1,23 @@
-import { useParams } from "react-router";
-import { NavLink } from "react-router";
+import { useParams, NavLink } from "react-router";
 import { useListe } from "../context/ListeContext";
+import { useFavoris } from "../context/FavorisContext";
 
 export default function Recette() {
   const { recettes } = useListe();
   const { id } = useParams();
+  const { isFavori, addFavori, removeFavori } = useFavoris();
 
   const recette = recettes.find((r) => r.id === parseInt(id));
+  const favori = isFavori(recette.id);
+
+  // Gestion du clic sur le picto favoris
+  const handleFavoriClick = () => {
+    if (favori) {
+      removeFavori(recette.id);
+    } else {
+      addFavori(recette.id);
+    }
+  };
 
   return (
     <div>
@@ -50,11 +61,17 @@ export default function Recette() {
           </p>
           <div className="favoris">
             <img
-              src="../pictos/favoris.svg"
-              alt="Favoris"
-              width={40}
-              height={40}
+              src={
+                // change l'icon d'ajout au favoris si deja ajouter ou non
+                favori ? "../pictos/add-favoris.svg" : "../pictos/favoris.svg"
+              }
+              alt={favori ? "Retirer des favoris" : "Ajouter aux favoris"}
+              width={30}
+              height={30}
+              style={{ cursor: "pointer" }}
+              onClick={handleFavoriClick}
             />
+            Ajouter aux favoris
           </div>
         </div>
       </div>
@@ -62,11 +79,12 @@ export default function Recette() {
         <div className="etapes-ingredients">
           <h3>Ingrédients</h3>
           <p className="list-ingr">
-            {recette.ingredients.map((ingredient) => (
-              <span key={ingredient.id}>
-                {ingredient.illustration}
-                {ingredient.quantite}
-                {ingredient.unite}
+            {/* Afficher la liste des ingrédients */}
+            {recette.ingredients.map((ingredient, idx) => (
+              <span key={idx}>
+                {ingredient.illustration}&nbsp;
+                {ingredient.quantite}&nbsp;
+                {ingredient.unite}&nbsp;
                 {ingredient.nom}
                 <br />
               </span>
@@ -76,6 +94,7 @@ export default function Recette() {
         <div className="etapes">
           <h3>Etapes</h3>
           <p>
+            {/* Afficher la liste des étapes */}
             {recette.etapes.map((etape, index) => (
               <span key={index}>{etape}</span>
             ))}

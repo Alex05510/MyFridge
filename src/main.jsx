@@ -4,15 +4,16 @@ import "./index.css";
 import App from "./App.jsx";
 import { ListeProvider } from "./context/ListeContext";
 import { FridgeProvider } from "./context/FridgeContext";
+import { FavorisProvider } from "./context/FavorisContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <FridgeProvider>
-    <StrictMode>
-      <FridgeProvider>
-        <ListeProvider>
+  <StrictMode>
+    <FridgeProvider>
+      <ListeProvider>
+        <FavorisProvider>
           <App />
-        </ListeProvider>
-      </FridgeProvider>
-    </StrictMode>
-  </FridgeProvider>
+        </FavorisProvider>
+      </ListeProvider>
+    </FridgeProvider>
+  </StrictMode>
 );

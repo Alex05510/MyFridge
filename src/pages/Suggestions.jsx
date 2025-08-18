@@ -26,32 +26,6 @@ export default function Suggestions() {
           ))}
         </ul>
       )}
-      <div className="navbar">
-        <NavLink
-          to={"/Add"}
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <img src={"pictos/house.svg"} alt="Home" />
-        </NavLink>
-        <NavLink
-          to={"/suggestions"}
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <img src={"pictos/list.svg"} alt="Suggestions" />
-        </NavLink>
-        <NavLink
-          to={"/Favoris"}
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          <img src={"pictos/book.svg"} alt="Add Ingredient" />
-        </NavLink>
-      </div>
     </div>
   );
 }
