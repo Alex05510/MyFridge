@@ -1,4 +1,3 @@
-Frigo Vide
 Frigo Vide est une application web qui aide à mieux manger en utilisant les restes de votre frigo, tout en économisant au maximum. Elle propose des recettes adaptées à ce que vous avez chez vous et permet de gérer vos favoris.
 
 Fonctionnalités principales
