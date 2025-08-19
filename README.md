@@ -1,12 +1,28 @@
-# React + Vite
+Frigo Vide
+Frigo Vide est une application web qui aide à mieux manger en utilisant les restes de votre frigo, tout en économisant au maximum. Elle propose des recettes adaptées à ce que vous avez chez vous et permet de gérer vos favoris.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fonctionnalités principales
+Accueil (Home.jsx)
+Présentation de l’application et accès rapide à l’ajout d’ingrédients présents dans le frigo.
 
-Currently, two official plugins are available:
+Ajout d’ingrédients :
+Permet d’ajouter et de supprimer les ingrédients que vous avez dans votre frigo. Une fois la liste complétée, vous pouvez lancer la recherche de recettes adaptées.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Suggestions de recettes (Suggestions.jsx)
+Affiche les recettes proposées selon les ingrédients renseignés. Si aucune recette n’est trouvée, un message s’affiche.
 
-## Expanding the ESLint configuration
+Recette détaillée :
+Affiche tous les détails d’une recette sélectionnée : image, temps de préparation, nombre de personnes, temps de cuisson, ingrédients et étapes. Possibilité d’ajouter ou retirer la recette des favoris.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Favoris :
+Liste toutes les recettes que vous avez ajoutées en favoris. Si aucun favori n’est enregistré, un message s’affiche.
+
+Utilisation
+Ajoutez les ingrédients présents dans votre frigo.
+Consultez les suggestions de recettes adaptées.
+Visualisez les détails d’une recette et ajoutez-la à vos favoris si vous le souhaitez.
+Retrouvez facilement vos recettes favorites dans la section dédiée.
+Technologies
+React
+Vite
+CSS pour le style
